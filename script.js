@@ -1,13 +1,13 @@
 const quizData = [
     {
         question: "スマートフォンは何を実現したでしょう？",
-        answers: ["マルチタッチによる直感操作", "フェイスIDによる  顔認証", "防水性能", "ワイヤレス  充電機能"],
-        correct: 0
+        answers: ["フェイスIDによる  顔認証", "防水性能", "ワイヤレス  充電機能","マルチタッチによる直感操作"],
+        correct: 3
     },
     {
         question: "HTMLは何の略ですか？",
-        answers: ["Hyper Text Markup Language", "High Text Markup Language", "Hyperlink Text Markup Language", "None of the above"],
-        correct: 0
+        answers: ["High Text Markup Language", "Hyper Text Markup Language", "Hyperlink Text Markup Language", "None of the above"],
+        correct: 1
     }
 ];
 
