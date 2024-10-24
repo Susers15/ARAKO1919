@@ -76,6 +76,22 @@ function loadQuestion() {
 
     quizContainer.appendChild(answersContainer);
 
+        /// 2問目のヒントを追加
+if (currentQuestionIndex === 1) {
+    const hintElement = document.createElement('div');
+    hintElement.classList.add('hint');
+    hintElement.style.textAlign = 'center';
+    hintElement.style.fontWeight = 'bold';
+    hintElement.style.fontSize = '24px'; // 大きい文字サイズ
+    hintElement.style.color = 'rgba(0, 0, 0, 0.800)'; // ここを調整できるように
+    hintElement.style.textShadow = '1px 1px 5px rgba(0, 0, 0, 0.5)'; // 黒い薄い影
+    hintElement.innerHTML = `
+       <br>HTMLとは、Webサイト(googleとかの）骨組み、木です。<br>
+        ここに、CSSという、葉っぱや色などの装飾を加えると、<br>
+        綺麗なサイトが出来上がります。
+    `;
+    quizContainer.appendChild(hintElement);
+}
     setTimeout(() => {
         questionElement.classList.add('show');
     }, 10);
