@@ -155,7 +155,7 @@ function showMessage(message, color, isWrong = false) {
 
     setTimeout(() => {
         messageElement.style.opacity = 1;
-    }, 100);
+    },80);
 
     setTimeout(() => {
         messageElement.style.opacity = 0;
@@ -163,7 +163,7 @@ function showMessage(message, color, isWrong = false) {
             messageElement.remove();
             fadeOutBackgroundAndRedirect();
         }, 500);
-    }, 10000);
+    }, 5000);
 }
 
 function fadeOutBackgroundAndRedirect() {
