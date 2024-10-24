@@ -1,8 +1,8 @@
 const quizData = [
     {
         question: "スマートフォンは何を実現したでしょう？",
-        answers: ["フェイスIDによる  顔認証", "防水性能", "ワイヤレス  充電機能","マルチタッチによる直感操作"],
-        correct: 3
+        answers: ["マルチタッチによる直感操作", "フェイスIDによる顔認証", "防水性能", "ワイヤレス充電機能"],
+        correct: 0
     },
     {
         question: "HTMLは何の略ですか？",
@@ -15,8 +15,17 @@ let currentQuestionIndex = 0;
 let score = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
-    loadStartScreen();
-});
+    
+        // 壁紙設定
+        document.body.style.backgroundImage = "url('background.jpg')";
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundPosition = "center";
+        document.body.style.backgroundRepeat = "no-repeat";
+        
+        loadStartScreen();
+    });
+    
+
 
 function loadStartScreen() {
     const startScreen = document.getElementById('startScreen');
@@ -76,14 +85,14 @@ function loadQuestion() {
 
     quizContainer.appendChild(answersContainer);
 
-        /// 2問目のヒントを追加
+    /// 2問目のヒントを追加
 if (currentQuestionIndex === 1) {
     const hintElement = document.createElement('div');
     hintElement.classList.add('hint');
     hintElement.style.textAlign = 'center';
     hintElement.style.fontWeight = 'bold';
     hintElement.style.fontSize = '24px'; // 大きい文字サイズ
-    hintElement.style.color = 'rgba(0, 0, 0, 0.800)'; // ここを調整できるように
+    hintElement.style.color = '#FFFFFF'; // ここを調整できるように
     hintElement.style.textShadow = '1px 1px 5px rgba(0, 0, 0, 0.5)'; // 黒い薄い影
     hintElement.innerHTML = `
        <br>HTMLとは、Webサイト(googleとかの）骨組み、木です。<br>
@@ -92,6 +101,7 @@ if (currentQuestionIndex === 1) {
     `;
     quizContainer.appendChild(hintElement);
 }
+
     setTimeout(() => {
         questionElement.classList.add('show');
     }, 10);
@@ -118,6 +128,8 @@ function selectAnswer(index) {
     document.getElementById('next').style.display = 'block';
 }
 
+
+
 document.getElementById('next').onclick = () => {
     const totalQuestions = quizData.length;
 
@@ -143,7 +155,7 @@ document.getElementById('next').onclick = () => {
                 showMessage("お疲れ様👍↑前に行ってね", "white", true);
             } else {
                 playSound('correctSound'); // 1/2正解の音
-                showMessage("やってね👍→右に行ってね", "white");
+                showMessage("やったね👍→右に行ってね", "white");
             }
         }, 500);
     }
@@ -171,7 +183,7 @@ function showMessage(message, color, isWrong = false) {
 
     setTimeout(() => {
         messageElement.style.opacity = 1;
-    },80);
+    }, 100);
 
     setTimeout(() => {
         messageElement.style.opacity = 0;
@@ -191,8 +203,8 @@ function fadeOutBackgroundAndRedirect() {
     document.body.style.opacity = 0;
 
     setTimeout(() => {
-        window.location.href = "https://arako2.netlify.app/";
-    }, 1000);
+        window.location.href = "https://incandescent-syrniki-95478a.netlify.app//";
+    }, 500);
 }
 
 // 音声ファイルの設定
