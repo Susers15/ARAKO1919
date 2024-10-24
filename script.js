@@ -175,7 +175,7 @@ function fadeOutBackgroundAndRedirect() {
     document.body.style.opacity = 0;
 
     setTimeout(() => {
-        window.location.href = "https://incandescent-syrniki-95478a.netlify.app//";
+        window.location.href = "https://arako2.netlify.app/";
     }, 1000);
 }
 
